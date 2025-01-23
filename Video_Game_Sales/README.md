@@ -1,5 +1,5 @@
-In this project, I took a dataset from [Kaggle.com](https://www.kaggle.com/datasets/gregorut/videogamesales) and decided to address several business questions created using AI. I will visualize the data at the end.\
-Below, I will outline these business tasks, and at the very end, I will describe the files in this entire folder.
+In this project, I took a dataset from [Kaggle.com](https://www.kaggle.com/datasets/gregorut/videogamesales) and decided to address three business questions created using AI. I will visualize the data at the end.\
+Below, I will outline these business tasks.
 
 ### 1. Genre Popularity Analysis
 
@@ -65,28 +65,42 @@ ORDER BY average_sales_per_game DESC
 ### Analysis
 
 ### 2. Identifying the Best-Performing Platforms
->**Task**: Analyze which platforms (e.g., PlayStation, Xbox, PC) have the highest average sales per game. Include a breakdown by release year.
+>**Task**: Analyze which platforms (e.g., PlayStation, Xbox, PC) have the highest average sales per game.
 
 **Goal**: Assess the profitability of investing in specific platforms.
 
+<details>  
+  
+<summary>Query & Output</summary>  
+
+```
+SELECT platform, COUNT(*) AS number_of_games, SUM(global_sales) AS sum_of_sales, ROUND(SUM(global_sales)/COUNT(*),2) AS average_sales_per_game
+FROM video_game_sales.vgsales
+GROUP BY platform
+ORDER BY average_sales_per_game DESC
+```
+![average_sales_per_game_console](https://github.com/user-attachments/assets/dcee54eb-6697-46c7-94a6-bdb682d6f3e9)
+
+
+</details>  
+
+
 ### 3. Publisher Impact on Sales
->**Task**: Create a ranking of publishers based on their total game sales. Identify publishers with the largest sales growth over the last five years.
+>**Task**: Create a ranking of 10 publishers based on their total game sales.
 
 **Goal**: Support decisions regarding potential collaborations with publishers.
 
-### 4. Hits vs. Flops
->**Task**: Identify the best-selling and worst-selling games in each genre. Draw conclusions about common traits within both groups.
+<details>  
+  
+<summary>Query & Output</summary>  
 
-**Goal**: Understand factors influencing a game's success or failure.
-### 5.Release Year Analysis
->**Task**: Determine which years saw the most games surpassing 100,000 copies sold. Investigate whether certain years had particularly high game sales.
+```
+SELECT publisher, SUM(global_sales) FROM video_game_sales.vgsales
+WHERE publisher IS NOT NULL
+GROUP BY publisher
+ORDER BY SUM(global_sales) DESC
+LIMIT 10
+```
+![top_publishers](https://github.com/user-attachments/assets/2b2cd1a4-ec9a-447a-ac55-1dc61f725ed3)  
 
-**Goal**: Understand market cycles and the best timing for game releases.
-### 6. Regions with the Greatest Potential
->**Task**: Identify regions that generate the highest share of game sales. Find games that succeeded in one region but not in others.
-
-**Goal**: Support regional distribution strategies.
-### 7. Sales Seasonality
->**Task**: Analyze the seasonality of game sales—determine which months achieve the highest sales. Pay attention to differences between game genres and regions.
-
-**Goal**: Develop release and promotion schedules.
+</details>
