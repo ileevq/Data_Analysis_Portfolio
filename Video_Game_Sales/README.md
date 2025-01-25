@@ -1,6 +1,8 @@
 In this project, I took a dataset from [Kaggle.com](https://www.kaggle.com/datasets/gregorut/videogamesales) and decided to address three business questions created using AI. I will visualize the data at the end.\
 Below, I will outline these business tasks.
 
+![vgsviz](https://github.com/user-attachments/assets/1e984009-f9e1-4dad-a486-64d4522a7fd2)
+
 ### 1. Genre Popularity Analysis
 
 >**Task**: Show the most popular game genres (e.g., RPG, FPS, Sports) in terms of total sales. Pay special attention to differences in sales results by region (e.g., North America, Europe, Japan).
@@ -63,6 +65,7 @@ ORDER BY average_sales_per_game DESC
 </details>  
 
 ### Analysis
+  Looking at the tables, we can see that the genre of games that sell best for North America, Europe and other parts of the world mostly overlap with global sales. An interesting exception to this is Japan, where we can see with the naked eye that the best-selling games genre is completely different. With this in mind, we might take a different approach in marketing a game to that market. At the same time, we know that when producing Shooter or Action games, we should not do it around that market.
 
 ### 2. Identifying the Best-Performing Platforms
 >**Task**: Analyze which platforms (e.g., PlayStation, Xbox, PC) have the highest average sales per game.
@@ -84,6 +87,8 @@ ORDER BY average_sales_per_game DESC
 
 </details>  
 
+### Analysis
+  In this case, even though we see consoles like the GameBoy or NES at the top, we know that these consoles went out of use years ago. Taking that into account, one of the top systems is the PlayStation 4. Even though it's a previous-generation console, many people still use it, and new games continue to be released for it. In a direct comparison with the other console of that generation – the Xbox One – the former comes out on top. Looking back one more generation, we can see that the Xbox 360 and PlayStation 3 have very similar statistics. This table is more informational rather than meant to help us make a decision. We know that new productions are designed to run on the latest generation, which, unfortunately, is not included in this comparison.
 
 ### 3. Publisher Impact on Sales
 >**Task**: Create a ranking of 10 publishers based on their total game sales.
@@ -103,4 +108,7 @@ LIMIT 10
 ```
 ![top_publishers](https://github.com/user-attachments/assets/2b2cd1a4-ec9a-447a-ac55-1dc61f725ed3)  
 
-</details>
+</details>  
+
+### Analysis
+ Looking at this table, choosing a publisher might seem simple. Unfortunately, the devil is in the details. As we know from the table in task 2, it also includes the best-selling titles from older consoles. This might mean that a publisher who was once at the top no longer produces as many high-quality games. Making a decision about a potential collaboration would require taking significantly more steps and conducting further analyses. Interestingly, in this comparison, we have as many as 5 Japanese publishers, 4 American ones, and only one European publisher – Ubisoft from France.
