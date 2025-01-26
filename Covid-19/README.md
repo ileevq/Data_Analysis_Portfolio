@@ -1,0 +1,1 @@
+ I would like to perform a brief analysis using Excel and visualize basic data using Power BI. I have downloaded a dataset [Weekly COVID-19 cases and deaths by date reported to WHO](https://data.who.int/dashboards/covid19/data?n=o), cleaned and standardized it so that it can also be imported into SQL.
