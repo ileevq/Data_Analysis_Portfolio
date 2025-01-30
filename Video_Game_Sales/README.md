@@ -1,4 +1,4 @@
-In this project, I took a dataset from [Kaggle.com](https://www.kaggle.com/datasets/gregorut/videogamesales) and decided to address three business questions created using AI. I will visualize the data at the end.\
+In this project, I took a dataset from [Kaggle.com](https://www.kaggle.com/datasets/gregorut/videogamesales) and decided to address three business questions created using AI. I will visualize basic data using Power BI.\
 Below, I will outline these business tasks.
 
 ![vgsviz](https://github.com/user-attachments/assets/1e984009-f9e1-4dad-a486-64d4522a7fd2)
